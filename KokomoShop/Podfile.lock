@@ -1,0 +1,112 @@
+PODS:
+  - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - AsyncSwift (2.0.1)
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
+  - Decodable (0.5)
+  - Device (2.0.1)
+  - DynamicColor (3.2.1)
+  - Eureka (2.0.1)
+  - Fabric (1.6.11)
+  - KeychainAccess (3.0.1)
+  - Nimble (5.1.1)
+  - NVActivityIndicatorView (3.5.1)
+  - Opera (1.0.0):
+    - Alamofire (~> 4.0)
+    - RxCocoa (~> 3.0.1)
+    - RxSwift (~> 3.0.1)
+  - Quick (1.1.0)
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
+  - Realm (2.4.3):
+    - Realm/Headers (= 2.4.3)
+  - Realm/Headers (2.4.3)
+  - RealmSwift (2.4.3):
+    - Realm (= 2.4.3)
+  - Result (3.2.1)
+  - RxAlamofire (3.0.2):
+    - RxAlamofire/Core (= 3.0.2)
+  - RxAlamofire/Core (3.0.2):
+    - Alamofire (~> 4.0)
+    - RxSwift (~> 3.0)
+  - RxCocoa (3.0.1):
+    - RxSwift (~> 3.0)
+  - RxSwift (3.0.1)
+  - SwiftDate (4.0.13)
+  - WebLinking (1.1.0)
+  - XLSwiftKit (2.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.0)
+  - AsyncSwift (~> 2.0)
+  - Crashlytics
+  - Decodable (~> 0.5)
+  - Device (~> 2.0)
+  - DynamicColor (~> 3.0)
+  - Eureka (~> 2.0.0-beta.1)
+  - Fabric (~> 1.6)
+  - KeychainAccess (~> 3.0)
+  - Nimble (~> 5.0)
+  - NVActivityIndicatorView (~> 3.0)
+  - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
+  - Quick (~> 1.0)
+  - R.swift (~> 3.0)
+  - RealmSwift (~> 2.0)
+  - Result (~> 3.0)
+  - RxAlamofire (~> 3.0)
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
+  - SwiftDate (~> 4.0)
+  - WebLinking (from `https://github.com/kylef/WebLinking.swift`, branch `master`)
+  - XLSwiftKit (~> 2.0)
+
+EXTERNAL SOURCES:
+  Opera:
+    :branch: Swift3
+    :git: https://github.com/xmartlabs/Opera.git
+  WebLinking:
+    :branch: master
+    :git: https://github.com/kylef/WebLinking.swift
+
+CHECKOUT OPTIONS:
+  Opera:
+    :commit: c81c84dad0d9a96bb7f6017fdd6a30f23f4492d7
+    :git: https://github.com/xmartlabs/Opera.git
+  WebLinking:
+    :commit: fddbacc30deab8afe12ce1d3b78bd27c593a0c29
+    :git: https://github.com/kylef/WebLinking.swift
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
+  Device: 7dd12a4fc8a72a90211f2c9ac8975a728322a148
+  DynamicColor: 4786d650c69da6c3f2cbfe068348288ec4e5521f
+  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
+  Opera: 5018ced09d6caadc4c1076ea806c940b558761a2
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
+  RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
+  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
+  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
+  WebLinking: 3f71787c14a225148e8be29fe6e7c98597cbc459
+  XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
+
+PODFILE CHECKSUM: 853f745c3eb1fb288d0d22900fde48922db032d5
+
+COCOAPODS: 1.2.0
