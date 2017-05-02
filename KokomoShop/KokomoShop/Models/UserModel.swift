@@ -31,7 +31,7 @@ final class User: Object {
     override static func ignoredProperties() -> [String] {
         return []
     }
-
+    
     convenience init(id: Int, email: String?, avatarUrlString: String?, company: String?, username: String) {
         self.init()
         self.id = id
@@ -43,13 +43,13 @@ final class User: Object {
 }
 
 extension User: Decodable, OperaDecodable {
-
+    
     static func decode(_ data: Any) throws -> User {
         return try User(id: data => "id",
-                 email: data =>? "email",
-       avatarUrlString: data =>? "avatar_url",
-               company: data =>? "name",
-              username: data => "login")
+                        email: data =>? "email",
+                        avatarUrlString: data =>? "avatar_url",
+                        company: data =>? "name",
+                        username: data => "login")
     }
     
 }

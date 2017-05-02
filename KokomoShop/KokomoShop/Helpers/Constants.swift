@@ -13,7 +13,7 @@ import XLSwiftKit
 struct Constants {
 
 	struct Network {
-        static let baseUrl = URL(string: "https://api.github.com")!
+        static let baseUrl = URL(string: "https://www.myer.com.au")!
         static let AuthTokenName = "Authorization"
         static let SuccessCode = 200
         static let successRange = 200..<300

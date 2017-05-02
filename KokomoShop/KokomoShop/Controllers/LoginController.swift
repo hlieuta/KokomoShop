@@ -59,27 +59,12 @@ class LoginController: FormViewController {
     // MARK: - Actions
     
     func loginTapped() {
-        let writtenUsername = getTextFromRow(RowTags.LogInUsername)
-        let writtenPassword = getPasswordFromRow(RowTags.LogInPassword)
-        guard let username = writtenUsername, let password = writtenPassword, !username.isEmpty && !password.isEmpty else {
-            showError("Please enter the username and password")
-            return
-        }
-
-        LoadingIndicator.show()
-        Route.User.login(username: username, password: password)
-            .rx_anyObject()
-            .do(onError: { [weak self] (error: Error) in
-                LoadingIndicator.hide()
-                self?.showError("Error", message: (error as? OperaError)?.debugDescription ?? "Sorry user login does not work correctly")
-            })
-            .flatMap() { _ in
-                return Route.User.getInfo(username: username).rx_object()
-            }
-            .subscribe(onNext: { [weak self] (user: User) in
-                LoadingIndicator.hide()
-                self?.showError("Great", message: "You have been successfully logged in")
-            })
-            .addDisposableTo(disposeBag)
+        
+        Route.Category.top().rx_object().subscribe(onNext: { [weak self] (catalogGroup: CatalogGroup) in
+            LoadingIndicator.hide()
+            self?.showError("Great", message: "You have been successfully logged in")
+        }).addDisposableTo(disposeBag)
+        
+        
     }
 }
