@@ -17,8 +17,7 @@ final class CatalogGroup: Object {
     dynamic var resourceName: String?
     dynamic var recordSetComplete: String?
     dynamic var recordSetStartNumber: String?
-    var  CatalogGroupView: [Category]?
-    
+    let  CatalogGroupView = List<Category>()
     /**
      Return property names that should be ignored by Realm. Realm will not persist these properties.
      */
@@ -31,7 +30,9 @@ final class CatalogGroup: Object {
         self.resourceName = resourceName
         self.recordSetComplete = recordSetComplete
         self.recordSetStartNumber = recordSetStartNumber
-        self.CatalogGroupView = CatalogGroupView
+        if let catalogGroup = CatalogGroupView {
+            self.CatalogGroupView.append(objectsIn:catalogGroup)
+        }
     }
 }
 
