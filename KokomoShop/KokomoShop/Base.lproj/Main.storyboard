@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="478" y="-452"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="gs4-02-Ad2">
             <objects>
-                <tabBarController id="ACu-WV-QGX" sceneMemberID="viewController">
+                <tabBarController id="ACu-WV-QGX" customClass="MainViewController" customModule="KokomoShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="n9p-g7-2vo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="-1497" y="261"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Choose category-->
         <scene sceneID="Igm-G7-plH">
             <objects>
                 <tableViewController id="46j-ws-ovM" customClass="CategoryViewController" customModule="KokomoShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,6 +91,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="46j-ws-ovM" kind="show" identifier="subcategory" id="eab-TV-h8l"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -98,17 +101,17 @@
                             <outlet property="delegate" destination="46j-ws-ovM" id="tym-lA-uiR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rri-Lf-MBi"/>
+                    <navigationItem key="navigationItem" title="Choose category" id="rri-Lf-MBi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abY-u5-AnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="1058"/>
+            <point key="canvasLocation" x="478" y="1088"/>
         </scene>
-        <!--Item-->
+        <!--Shop-->
         <scene sceneID="chn-FV-5WB">
             <objects>
                 <navigationController id="oDL-20-3ew" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VRt-wm-Zyn"/>
+                    <tabBarItem key="tabBarItem" title="Shop" id="VRt-wm-Zyn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hAc-mO-j2A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -122,4 +125,7 @@
             <point key="canvasLocation" x="-486" y="703"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nH3-rd-5Lz"/>
+    </inferredMetricsTieBreakers>
 </document>

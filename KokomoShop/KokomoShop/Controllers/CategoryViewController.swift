@@ -19,7 +19,7 @@ class CategoryViewController: UITableViewController {
         }
     }
     
-    var categoryId:String = "" {
+    var categoryId:String = Constants.Category.topCategoryId {
         didSet {
             loadCategory(categoryId: categoryId)
         }
@@ -29,7 +29,10 @@ class CategoryViewController: UITableViewController {
     let disposeBag = DisposeBag()
     
     fileprivate func loadCategory(categoryId: String){
-        LoadingIndicator.show()
+        
+        if(categoryId == Constants.Category.topCategoryId){
+            LoadingIndicator.show()
+        }
         Route.Category.getCategory(categoryId: categoryId).rx_object().subscribe(
             onNext: { [weak self] (catalogGroup: CatalogGroup) in
                 LoadingIndicator.hide()
@@ -45,9 +48,7 @@ class CategoryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if categoryId.isEmpty {
-            categoryId = Constants.Category.topCategoryId
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,18 +67,15 @@ class CategoryViewController: UITableViewController {
          return categories[section].count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.showError("testing")
-    }
-    
     fileprivate struct Storyboard{
-        static let CategoryCellIdentifier = "Category"
+        static let categoryCellIdentifier = "Category"
+        static let subcategorySegueIdentifier = "subcategory"
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.CategoryCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.categoryCellIdentifier, for: indexPath)
         let category = categories[indexPath.section][indexPath.row]
         if let categoryName = category.name {
             cell.textLabel?.text = categoryName
@@ -88,14 +86,22 @@ class CategoryViewController: UITableViewController {
     
 
    
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Storyboard.subcategorySegueIdentifier {
+            let subcategoryController =  segue.destination as! CategoryViewController
+            subcategoryController.categories.removeAll()
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                if let  selectedId = categories[indexPath.section][indexPath.row].uniqueID {
+                    subcategoryController.categoryId = selectedId
+                }
+
+            }
+        }
     }
-    */
+    
 
 }
