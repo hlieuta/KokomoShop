@@ -59,11 +59,6 @@ class LoginController: FormViewController {
     
     func loginTapped() {
         
-        Route.Category.top().rx_object().subscribe(onNext: { [weak self] (catalogGroup: CatalogGroup) in
-            LoadingIndicator.hide()
-            self?.showError("Great", message: "You have been successfully logged in")
-        }).addDisposableTo(disposeBag)
-        
         
     }
 }

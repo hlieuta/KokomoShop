@@ -12,26 +12,27 @@ import Alamofire
 import Opera
 
 extension Route {
-    
+
     enum Category: RouteType {
         
-        case top()
-        case getSubCategory(categoryId: String)
-    
+        case getCategory(categoryId: String)
+        
         var method: Alamofire.HTTPMethod {
             switch self {
             case .
-                top, .getSubCategory:
+            getCategory:
                 return .get
             }
         }
         
         var path: String {
             switch self {
-            case .top():
-                return "wcs/resources/store/10251/categoryview/@top"
-            case .getSubCategory(let categoryId):
-                return "wcs/resources/store/10251/categoryview/byParentCategory/\(categoryId)"
+            case .getCategory(let categoryId):
+                if Constants.Category.topCategoryId == categoryId {
+                    return "wcs/resources/store/10251/categoryview/@top"
+                }else {
+                    return "wcs/resources/store/10251/categoryview/byParentCategory/\(categoryId)"
+                }
             }
         }
         

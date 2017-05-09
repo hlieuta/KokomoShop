@@ -12,18 +12,25 @@ import Opera
 
 class CategoryViewController: UITableViewController {
     
-    
+
     var categories = [Array<Category>] (){
         didSet{
             tableView.reloadData()
         }
     }
     
+    var categoryId:String = "" {
+        didSet {
+            loadCategory(categoryId: categoryId)
+        }
+        
+    }
+    
     let disposeBag = DisposeBag()
     
-    fileprivate func loadCategory(){
+    fileprivate func loadCategory(categoryId: String){
         LoadingIndicator.show()
-        Route.Category.top().rx_object().subscribe(
+        Route.Category.getCategory(categoryId: categoryId).rx_object().subscribe(
             onNext: { [weak self] (catalogGroup: CatalogGroup) in
                 LoadingIndicator.hide()
                 self?.categories.append(Array(catalogGroup.CatalogGroupView))
@@ -31,13 +38,16 @@ class CategoryViewController: UITableViewController {
             onError: { (Error) in
                 LoadingIndicator.hide()
         }).addDisposableTo(disposeBag)
-    
+        
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCategory()
+        if categoryId.isEmpty {
+            categoryId = Constants.Category.topCategoryId
+        }
     }
 
     override func didReceiveMemoryWarning() {

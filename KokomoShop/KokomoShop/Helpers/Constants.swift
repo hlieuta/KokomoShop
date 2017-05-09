@@ -43,4 +43,8 @@ struct Constants {
         static let crashlytics = false
         static let jsonResponse = false
     }
+    
+    struct Category {
+        static let topCategoryId = "@top"
+    }
 }
