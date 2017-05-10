@@ -57,9 +57,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="A9N-5H-t9B" kind="relationship" relationship="viewControllers" id="DeP-BM-S1N"/>
+                        <segue destination="oDL-20-3ew" kind="relationship" relationship="viewControllers" id="6Mi-FH-qXM"/>
                         <segue destination="pFP-U9-6GD" kind="relationship" relationship="viewControllers" id="eWO-5b-w6h"/>
                         <segue destination="oOM-qU-Vra" kind="relationship" relationship="viewControllers" id="e7c-iz-hk4"/>
-                        <segue destination="oDL-20-3ew" kind="relationship" relationship="viewControllers" id="6Mi-FH-qXM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAi-BX-RLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,6 +124,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czZ-nl-2Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-486" y="703"/>
+        </scene>
+        <!--Daily-->
+        <scene sceneID="vYI-vY-duM">
+            <objects>
+                <viewController id="A9N-5H-t9B" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZGA-he-Bqm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y0k-9v-b9e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dqy-lb-MQi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Daily" id="i0Y-jD-bOg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezj-ID-Z7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1302" y="1002"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
