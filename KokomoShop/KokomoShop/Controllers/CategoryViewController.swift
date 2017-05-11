@@ -26,6 +26,7 @@ class CategoryViewController: UITableViewController {
         
     }
     
+    
     let disposeBag = DisposeBag()
     
     fileprivate func loadCategory(categoryId: String){
@@ -48,7 +49,13 @@ class CategoryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if categoryId == Constants.Category.topCategoryId {
+            self.navigationItem.title = "Choose category"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,8 +102,11 @@ class CategoryViewController: UITableViewController {
             let subcategoryController =  segue.destination as! CategoryViewController
             subcategoryController.categories.removeAll()
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                if let  selectedId = categories[indexPath.section][indexPath.row].uniqueID {
+                let selectedCategory = categories[indexPath.section][indexPath.row]
+                if let  selectedId = selectedCategory.uniqueID {
                     subcategoryController.categoryId = selectedId
+                    subcategoryController.navigationItem.title = ""
+                    self.navigationItem.title = selectedCategory.name
                 }
 
             }

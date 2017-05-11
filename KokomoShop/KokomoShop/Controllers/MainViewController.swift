@@ -26,6 +26,7 @@ class MainViewController: UITabBarController {
                 let nav = viewController as! UINavigationController
                 let categoryViewController = nav.topViewController as! CategoryViewController
                 categoryViewController.categoryId = Constants.Category.topCategoryId
+                
             }
         }
     }
