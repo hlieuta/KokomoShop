@@ -31,9 +31,7 @@ class CategoryViewController: UITableViewController {
     
     fileprivate func loadCategory(categoryId: String){
         
-        if(categoryId == Constants.Category.topCategoryId){
-            LoadingIndicator.show()
-        }
+        LoadingIndicator.show()
         Route.Category.getCategory(categoryId: categoryId).rx_object().subscribe(
             onNext: { [weak self] (catalogGroup: CatalogGroup) in
                 LoadingIndicator.hide()
