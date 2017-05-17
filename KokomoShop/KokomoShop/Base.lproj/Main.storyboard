@@ -120,7 +120,9 @@
                             <outlet property="delegate" destination="46j-ws-ovM" id="tym-lA-uiR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose category" id="rri-Lf-MBi"/>
+                    <navigationItem key="navigationItem" title="Choose category" id="rri-Lf-MBi">
+                        <barButtonItem key="backBarButtonItem" title=" " id="lcy-bT-NIc"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abY-u5-AnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="-1514" y="1044"/>
         </scene>
-        <!--Choose category-->
+        <!--Category View Controller-->
         <scene sceneID="20S-na-Kc3">
             <objects>
                 <tableViewController id="ok9-Sf-Bxf" customClass="CategoryViewController" customModule="KokomoShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,7 +199,7 @@
                             <outlet property="delegate" destination="ok9-Sf-Bxf" id="6cZ-qa-DKp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose category" id="gQq-Nn-CsD"/>
+                    <navigationItem key="navigationItem" id="gQq-Nn-CsD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCL-hC-bON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

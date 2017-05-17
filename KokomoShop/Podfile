@@ -12,7 +12,7 @@ def app_pods
     pod 'Device', '~> 2.0'
     pod 'Decodable', '~> 0.5'
     pod 'DynamicColor', '~> 3.0'
-    pod 'Eureka', '~> 2.0.0-beta.1'
+    pod 'Eureka', '~> 3.0'
     pod 'Fabric', '~> 1.6'
     pod 'KeychainAccess', '~> 3.0'
     pod 'NVActivityIndicatorView', '~> 3.0'
@@ -26,6 +26,7 @@ def app_pods
     pod 'SwiftDate', '~> 4.0'
     pod 'WebLinking', :git => 'https://github.com/kylef/WebLinking.swift', :branch => 'master'
     pod 'XLSwiftKit', '~> 2.0'
+    pod 'XLPagerTabStrip', '~> 7.0'
 end
 
 def testing_pods
