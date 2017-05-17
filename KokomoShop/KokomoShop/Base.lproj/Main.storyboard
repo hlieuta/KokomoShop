@@ -68,29 +68,6 @@
             <point key="canvasLocation" x="-1497" y="261"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="i38-qq-MhD">
-            <objects>
-                <viewController id="GMX-yb-lDJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xbG-Em-71C"/>
-                        <viewControllerLayoutGuide type="bottom" id="k9z-2S-94K"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DIr-3K-8Je">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="wCh-Bo-e7g"/>
-                    <connections>
-                        <segue destination="46j-ws-ovM" kind="show" id="q29-CA-qe9"/>
-                        <segue destination="omD-Ue-A93" kind="show" id="CHD-YX-tMr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r6V-3k-c8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="623" y="1101"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="f46-zd-joE">
             <objects>
                 <viewController id="omD-Ue-A93" sceneMemberID="viewController">
@@ -134,7 +111,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ok9-Sf-Bxf" kind="show" id="foj-nS-1Cd"/>
+                                    <segue destination="ok9-Sf-Bxf" kind="show" identifier="subcategory" id="fXw-K3-jrI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -147,7 +124,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abY-u5-AnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2022" y="1661"/>
+            <point key="canvasLocation" x="1201" y="1513"/>
         </scene>
         <!--Shop-->
         <scene sceneID="chn-FV-5WB">
@@ -159,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="GMX-yb-lDJ" kind="relationship" relationship="rootViewController" id="qfC-8v-e3I"/>
+                        <segue destination="46j-ws-ovM" kind="relationship" relationship="rootViewController" id="dBK-jZ-KKf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czZ-nl-2Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,7 +188,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="omD-Ue-A93" kind="show" id="MR6-KN-g7Y"/>
+                                    <segue destination="omD-Ue-A93" kind="show" identifier="shopview" id="MR6-KN-g7Y"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -224,10 +201,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCL-hC-bON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3095" y="1660"/>
+            <point key="canvasLocation" x="2366" y="1513"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="MR6-KN-g7Y"/>
-    </inferredMetricsTieBreakers>
 </document>

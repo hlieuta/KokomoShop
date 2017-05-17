@@ -50,11 +50,6 @@ class CategoryViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if categoryId == Constants.Category.topCategoryId {
-            self.navigationItem.title = "Choose category"
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -75,6 +70,7 @@ class CategoryViewController: UITableViewController {
     fileprivate struct Storyboard{
         static let categoryCellIdentifier = "Category"
         static let subcategorySegueIdentifier = "subcategory"
+        static let showSegueIdentifier = "shop"
     }
 
 
@@ -88,7 +84,7 @@ class CategoryViewController: UITableViewController {
         
         return cell
     }
-    
+
 
    
     
@@ -103,8 +99,7 @@ class CategoryViewController: UITableViewController {
                 let selectedCategory = categories[indexPath.section][indexPath.row]
                 if let  selectedId = selectedCategory.uniqueID {
                     subcategoryController.categoryId = selectedId
-                    subcategoryController.navigationItem.title = ""
-                    self.navigationItem.title = selectedCategory.name
+                    subcategoryController.title = selectedCategory.name
                 }
 
             }

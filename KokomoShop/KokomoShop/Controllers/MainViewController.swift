@@ -24,12 +24,11 @@ class MainViewController: UITabBarController {
         for viewController in self.viewControllers! {
             if viewController is UINavigationController {
                 let nav = viewController as! UINavigationController
-               
-                
+                let categoryViewController = nav.topViewController as! CategoryViewController
+                categoryViewController.categoryId = Constants.Category.topCategoryId
             }
         }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
