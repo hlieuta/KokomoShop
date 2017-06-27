@@ -27,6 +27,7 @@ def app_pods
     pod 'WebLinking', :git => 'https://github.com/kylef/WebLinking.swift', :branch => 'master'
     pod 'XLSwiftKit', '~> 2.0'
     pod 'XLPagerTabStrip', '~> 7.0'
+    pod 'PayPal-iOS-SDK'
 end
 
 def testing_pods

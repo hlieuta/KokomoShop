@@ -71,6 +71,7 @@ class CategoryViewController: UITableViewController {
         static let categoryCellIdentifier = "Category"
         static let subcategorySegueIdentifier = "subcategory"
         static let showSegueIdentifier = "shop"
+        static let productListingSegueIdentifier = "ProductListing"
     }
 
 
@@ -86,24 +87,38 @@ class CategoryViewController: UITableViewController {
     }
 
 
-   
+    func findSelectedCategory(indexPathForSelectedRow: IndexPath?) -> (categoryId: String?,categoryName:String?){
+        if let indexPath = indexPathForSelectedRow {
+            let selectedCategory = categories[indexPath.section][indexPath.row]
+            if let  selectedId = selectedCategory.uniqueID, let name = selectedCategory.name {
+                return (selectedId , name)
+            }
+        }
+        return (nil, nil)
+    }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.subcategorySegueIdentifier {
-            let subcategoryController =  segue.destination as! CategoryViewController
-            subcategoryController.categories.removeAll()
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let selectedCategory = categories[indexPath.section][indexPath.row]
-                if let  selectedId = selectedCategory.uniqueID {
-                    subcategoryController.categoryId = selectedId
-                    subcategoryController.title = selectedCategory.name
-                }
-
+        let selectedCategory = findSelectedCategory(indexPathForSelectedRow: tableView.indexPathForSelectedRow)
+        if let id = selectedCategory.categoryId, let title = selectedCategory.categoryName{
+            switch segue.identifier! {
+            case Storyboard.subcategorySegueIdentifier:
+                let subcategoryController =  segue.destination as! CategoryViewController
+                subcategoryController.categories.removeAll()
+                subcategoryController.categoryId = id
+                subcategoryController.title = title
+                break
+            case Storyboard.productListingSegueIdentifier:
+                let productListingController =  segue.destination as! ProductListingViewController
+                productListingController.categoryId = id
+            default:
+                break
             }
+            
         }
+        
     }
     
 

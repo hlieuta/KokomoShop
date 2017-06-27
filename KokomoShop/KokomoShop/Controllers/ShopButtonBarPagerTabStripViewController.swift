@@ -8,10 +8,25 @@
 
 import UIKit
 import XLPagerTabStrip
+import RxSwift
+import Opera
 
 class ShopButtonBarPagerTabStripViewController: ButtonBarPagerTabStripViewController {
 
-
+    let disposeBag = DisposeBag()
+    fileprivate var categories = [ProductViewController] ()
+    
+    var categoryId:String = Constants.Category.topCategoryId {
+        didSet {
+            loadCategory(categoryId: categoryId)
+        }
+        
+    }
+    
+    fileprivate func loadCategory(categoryId: String){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

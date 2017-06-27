@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ACu-WV-QGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ACu-WV-QGX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohZ-iu-QMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="262"/>
+            <point key="canvasLocation" x="954" y="244"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="w6a-6M-LEK">
@@ -172,7 +172,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="qa5-xn-S5v" kind="show" id="QID-oa-Nle"/>
+                                    <segue destination="qa5-xn-S5v" kind="show" identifier="ProductListing" id="QID-oa-Nle"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="2366" y="1513"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Listing View Controller-->
         <scene sceneID="wJm-UQ-yz4">
             <objects>
-                <viewController id="qa5-xn-S5v" sceneMemberID="viewController">
+                <viewController id="qa5-xn-S5v" customClass="ProductListingViewController" customModule="KokomoShop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VCn-Td-r8x"/>
                         <viewControllerLayoutGuide type="bottom" id="B7a-L4-lh1"/>
@@ -202,7 +202,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poY-Xx-wpR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <connections>
-                                    <segue destination="0sR-s1-jtM" kind="embed" id="cdg-vM-NAJ"/>
+                                    <segue destination="0sR-s1-jtM" kind="embed" identifier="productBarPagerTabStrip" id="Vc6-fh-nz1"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -253,7 +253,6 @@
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T6G-bn-w2m" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                <color key="backgroundColor" red="0.027450980390000001" green="0.72549019609999998" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="QBK-Ai-aZp"/>
                                 </constraints>
@@ -285,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAi-8T-cwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3884" y="1513"/>
+            <point key="canvasLocation" x="4028" y="1543"/>
         </scene>
     </scenes>
 </document>
