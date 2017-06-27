@@ -10,7 +10,7 @@ import UIKit
 
 class ProductListingViewController: UIViewController {
 
-    var categoryId:String = ""
+    var productPages = [ProductViewController] ()
     
     fileprivate struct Storyboard{
         
@@ -39,7 +39,7 @@ class ProductListingViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == Storyboard.ShopPagerTabStripSegueIdentifier{
             let shopButtonBarPager =  segue.destination as! ShopButtonBarPagerTabStripViewController
-            shopButtonBarPager.categoryId = self.categoryId;
+            shopButtonBarPager.productPages = self.productPages
         }
         
 

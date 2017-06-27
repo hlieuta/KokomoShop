@@ -19,12 +19,15 @@ class CategoryViewController: UITableViewController {
         }
     }
     
+    fileprivate var productPages = [ProductViewController] ()
+    
     var categoryId:String = Constants.Category.topCategoryId {
         didSet {
             loadCategory(categoryId: categoryId)
         }
         
     }
+    var isSubcategory: Bool = false
     
     
     let disposeBag = DisposeBag()
@@ -70,8 +73,7 @@ class CategoryViewController: UITableViewController {
     fileprivate struct Storyboard{
         static let categoryCellIdentifier = "Category"
         static let subcategorySegueIdentifier = "subcategory"
-        static let showSegueIdentifier = "shop"
-        static let productListingSegueIdentifier = "ProductListing"
+        static let productListingSegueIdentifier = "productListing"
     }
 
 
@@ -84,6 +86,26 @@ class CategoryViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(self.isSubcategory){
+            let selectedCategory = findSelectedCategory(indexPathForSelectedRow: indexPath)
+            productPages.removeAll();
+            if let id = selectedCategory.categoryId{
+                LoadingIndicator.show()
+                Route.Category.getCategory(categoryId: id).rx_object().subscribe(
+                    onNext: { [weak self] (catalogGroup: CatalogGroup) in
+                        LoadingIndicator.hide()
+                        self?.productPages.append(ProductViewController(itemInfo: "view"))
+                        self?.performSegue(withIdentifier: Storyboard.productListingSegueIdentifier, sender: self)
+                    },
+                    onError: { (Error) in
+                        LoadingIndicator.hide()
+                }).addDisposableTo(disposeBag)
+            }
+        }
+
     }
 
 
@@ -109,10 +131,11 @@ class CategoryViewController: UITableViewController {
                 subcategoryController.categories.removeAll()
                 subcategoryController.categoryId = id
                 subcategoryController.title = title
+                subcategoryController.isSubcategory = true
                 break
             case Storyboard.productListingSegueIdentifier:
                 let productListingController =  segue.destination as! ProductListingViewController
-                productListingController.categoryId = id
+                productListingController.productPages = self.productPages
             default:
                 break
             }

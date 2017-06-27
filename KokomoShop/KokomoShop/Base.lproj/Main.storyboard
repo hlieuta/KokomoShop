@@ -149,6 +149,7 @@
         <!--Category View Controller-->
         <scene sceneID="20S-na-Kc3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCL-hC-bON" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ok9-Sf-Bxf" customClass="CategoryViewController" customModule="KokomoShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jy5-5W-AuB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -171,9 +172,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="qa5-xn-S5v" kind="show" identifier="ProductListing" id="QID-oa-Nle"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -182,10 +180,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="gQq-Nn-CsD"/>
+                    <connections>
+                        <segue destination="qa5-xn-S5v" kind="show" identifier="productListing" id="txu-oE-rtn"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zCL-hC-bON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="1513"/>
+            <point key="canvasLocation" x="1993" y="1513"/>
         </scene>
         <!--Product Listing View Controller-->
         <scene sceneID="wJm-UQ-yz4">

@@ -14,22 +14,11 @@ import Opera
 class ShopButtonBarPagerTabStripViewController: ButtonBarPagerTabStripViewController {
 
     let disposeBag = DisposeBag()
-    fileprivate var categories = [ProductViewController] ()
+    var productPages = [ProductViewController] ()
     
-    var categoryId:String = Constants.Category.topCategoryId {
-        didSet {
-            loadCategory(categoryId: categoryId)
-        }
-        
-    }
-    
-    fileprivate func loadCategory(categoryId: String){
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         buttonBarView.selectedBar.backgroundColor = .orange
         buttonBarView.backgroundColor = UIColor(red: 7/255, green: 185/255, blue: 155/255, alpha: 1)
     }
@@ -40,7 +29,7 @@ class ShopButtonBarPagerTabStripViewController: ButtonBarPagerTabStripViewContro
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-         return [ProductViewController(itemInfo: "View"), ProductViewController(itemInfo: "View 2"), ProductViewController(itemInfo: "View 2")]
+         return self.productPages
     }
     
 
