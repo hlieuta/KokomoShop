@@ -54,8 +54,11 @@
 		6C34A8871EB8427B00BA40DF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34A8861EB8427B00BA40DF /* CategoryViewController.swift */; };
 		6C34A8891EB84DDA00BA40DF /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34A8881EB84DDA00BA40DF /* CategoryModel.swift */; };
 		6C34A88B1EB8512D00BA40DF /* CatalogGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34A88A1EB8512D00BA40DF /* CatalogGroupModel.swift */; };
+		6C562CAC1F05B8B60070E940 /* ProductModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C562CAB1F05B8B60070E940 /* ProductModal.swift */; };
 		6CACCFEA1ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CACCFE91ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift */; };
 		6CACCFEC1ECD311A00655CAA /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CACCFEB1ECD311A00655CAA /* ProductViewController.swift */; };
+		6CBF4B011F070895001E1E73 /* CatalogEntryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBF4B001F070895001E1E73 /* CatalogEntryModal.swift */; };
+		6CBF4B031F070C54001E1E73 /* ProductRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBF4B021F070C54001E1E73 /* ProductRoute.swift */; };
 		6CC2DC5A1EC1D29E00B2B85D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2DC591EC1D29E00B2B85D /* MainViewController.swift */; };
 		8DAA6177DA9042D85860C750 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F1A373849C3308E5FA57 /* Pods_UITests.framework */; };
 		8F0759921D7728360012D681 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0759911D7728360012D681 /* Helpers.swift */; };
@@ -148,8 +151,11 @@
 		6C34A8861EB8427B00BA40DF /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		6C34A8881EB84DDA00BA40DF /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		6C34A88A1EB8512D00BA40DF /* CatalogGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogGroupModel.swift; sourceTree = "<group>"; };
+		6C562CAB1F05B8B60070E940 /* ProductModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModal.swift; sourceTree = "<group>"; };
 		6CACCFE91ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopButtonBarPagerTabStripViewController.swift; sourceTree = "<group>"; };
 		6CACCFEB1ECD311A00655CAA /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		6CBF4B001F070895001E1E73 /* CatalogEntryModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogEntryModal.swift; sourceTree = "<group>"; };
+		6CBF4B021F070C54001E1E73 /* ProductRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRoute.swift; sourceTree = "<group>"; };
 		6CC2DC591EC1D29E00B2B85D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7B825ECE73F7CC1058884D69 /* Pods_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unit_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D1F36300BEF455B87151D4 /* Pods_ui_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ui_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +236,7 @@
 				281BF19F1C7B8EEF00809E3F /* UserRoute.swift */,
 				8F0759A01D774B390012D681 /* SessionController.swift */,
 				6C34A8801EB83B6A00BA40DF /* CategoryRoute.swift */,
+				6CBF4B021F070C54001E1E73 /* ProductRoute.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -316,6 +323,8 @@
 				8F0759A61D774FC10012D681 /* RealmManager.swift */,
 				6C34A8881EB84DDA00BA40DF /* CategoryModel.swift */,
 				6C34A88A1EB8512D00BA40DF /* CatalogGroupModel.swift */,
+				6C562CAB1F05B8B60070E940 /* ProductModal.swift */,
+				6CBF4B001F070895001E1E73 /* CatalogEntryModal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -954,6 +963,7 @@
 				28D65F951C99D8AF008ED705 /* UIDevice.swift in Sources */,
 				28A6B9D61CB5F95900682BCE /* RouteType.swift in Sources */,
 				283A74511C84DF2A00E23F88 /* LoginController.swift in Sources */,
+				6C562CAC1F05B8B60070E940 /* ProductModal.swift in Sources */,
 				8F0759A11D774B390012D681 /* SessionController.swift in Sources */,
 				6CACCFEC1ECD311A00655CAA /* ProductViewController.swift in Sources */,
 				6C34A8871EB8427B00BA40DF /* CategoryViewController.swift in Sources */,
@@ -963,6 +973,7 @@
 				8F0759A71D774FC10012D681 /* RealmManager.swift in Sources */,
 				6C34A8891EB84DDA00BA40DF /* CategoryModel.swift in Sources */,
 				465910AF1D80A5000022374B /* String.swift in Sources */,
+				6CBF4B011F070895001E1E73 /* CatalogEntryModal.swift in Sources */,
 				4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				28BFCE171CADF0B400C6962A /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,
@@ -972,6 +983,7 @@
 				281BF1A31C7B8EEF00809E3F /* UserRoute.swift in Sources */,
 				2867E82B1C74C7D400FCEBBD /* AppDelegate.swift in Sources */,
 				28C282441C7797CA003ECA4F /* Constants.swift in Sources */,
+				6CBF4B031F070C54001E1E73 /* ProductRoute.swift in Sources */,
 				4653B7F81D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */,
 				8F0759A41D774C5C0012D681 /* AppDelegate+KokomoShop.swift in Sources */,
 			);

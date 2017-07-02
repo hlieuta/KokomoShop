@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import Opera
+import XLPagerTabStrip
+
 
 class CategoryViewController: UITableViewController {
     
@@ -92,20 +94,32 @@ class CategoryViewController: UITableViewController {
         if(self.isSubcategory){
             let selectedCategory = findSelectedCategory(indexPathForSelectedRow: indexPath)
             productPages.removeAll();
-            if let id = selectedCategory.categoryId{
+            if let id = selectedCategory.categoryId,let name = selectedCategory.categoryName{
                 LoadingIndicator.show()
                 Route.Category.getCategory(categoryId: id).rx_object().subscribe(
                     onNext: { [weak self] (catalogGroup: CatalogGroup) in
-                        LoadingIndicator.hide()
-                        self?.productPages.append(ProductViewController(itemInfo: "view"))
-                        self?.performSegue(withIdentifier: Storyboard.productListingSegueIdentifier, sender: self)
+                        for category in catalogGroup.CatalogGroupView {
+                            if let categoryName = category.name, let categoryId = category.uniqueID{
+                                self?.productPages.append(ProductViewController(categoryId: categoryId, title: categoryName))
+                            }
+                        }
                     },
-                    onError: { (Error) in
+                    onError: { [weak self] (Error) in
+                        self?.productPages.append(ProductViewController(categoryId: id, title: name))
                         LoadingIndicator.hide()
+                        self?.performSegue(withIdentifier:
+                            Storyboard.productListingSegueIdentifier, sender: self)
+                        
+                },
+                    onCompleted:{ [weak self] () in
+                        LoadingIndicator.hide()
+                        self?.performSegue(withIdentifier:
+                            Storyboard.productListingSegueIdentifier, sender: self)
+                        
                 }).addDisposableTo(disposeBag)
             }
         }
-
+        
     }
 
 
