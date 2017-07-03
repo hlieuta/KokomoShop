@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Opera
+import OperaSwift
 import Alamofire
 
 extension RouteType {
@@ -24,12 +24,5 @@ extension URLRequestParametersSetup {
             params[Constants.Network.AuthTokenName] = token as AnyObject?
         }
         return params
-    }
-}
-
-extension URLRequestSetup {
-
-    func urlRequestSetup(_ urlRequest: NSMutableURLRequest) {
-        // setup url
     }
 }

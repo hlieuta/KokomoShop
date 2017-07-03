@@ -14,10 +14,10 @@ PODS:
   - KeychainAccess (3.0.2)
   - Nimble (5.1.1)
   - NVActivityIndicatorView (3.6.1)
-  - Opera (1.0.0):
-    - Alamofire (~> 4.0)
-    - RxCocoa (~> 3.0.1)
-    - RxSwift (~> 3.0.1)
+  - OperaSwift (2.0.0):
+    - Alamofire (~> 4.4.0)
+    - RxCocoa (~> 3.4.0)
+    - RxSwift (~> 3.4.0)
   - PayPal-iOS-SDK (2.17.0):
     - PayPal-iOS-SDK/CardIO (= 2.17.0)
     - PayPal-iOS-SDK/Core (= 2.17.0)
@@ -34,14 +34,14 @@ PODS:
   - RealmSwift (2.7.0):
     - Realm (= 2.7.0)
   - Result (3.2.2)
-  - RxAlamofire (3.0.2):
-    - RxAlamofire/Core (= 3.0.2)
-  - RxAlamofire/Core (3.0.2):
+  - RxAlamofire (3.0.3):
+    - RxAlamofire/Core (= 3.0.3)
+  - RxAlamofire/Core (3.0.3):
     - Alamofire (~> 4.0)
     - RxSwift (~> 3.0)
-  - RxCocoa (3.0.1):
-    - RxSwift (~> 3.0)
-  - RxSwift (3.0.1)
+  - RxCocoa (3.4.1):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.4.1)
   - SwiftDate (4.1.2)
   - WebLinking (1.1.0)
   - XLPagerTabStrip (7.0.0)
@@ -60,32 +60,26 @@ DEPENDENCIES:
   - KeychainAccess (~> 3.0)
   - Nimble (~> 5.0)
   - NVActivityIndicatorView (~> 3.0)
-  - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
+  - OperaSwift (~> 2.0)
   - PayPal-iOS-SDK
   - Quick (~> 1.0)
   - R.swift (~> 3.0)
   - RealmSwift (~> 2.0)
   - Result (~> 3.0)
   - RxAlamofire (~> 3.0)
-  - RxCocoa (~> 3.0)
-  - RxSwift (~> 3.0)
+  - RxCocoa (~> 3.4.1)
+  - RxSwift (~> 3.4.0)
   - SwiftDate (~> 4.0)
   - WebLinking (from `https://github.com/kylef/WebLinking.swift`, branch `master`)
   - XLPagerTabStrip (~> 7.0)
   - XLSwiftKit (~> 2.0)
 
 EXTERNAL SOURCES:
-  Opera:
-    :branch: Swift3
-    :git: https://github.com/xmartlabs/Opera.git
   WebLinking:
     :branch: master
     :git: https://github.com/kylef/WebLinking.swift
 
 CHECKOUT OPTIONS:
-  Opera:
-    :commit: c81c84dad0d9a96bb7f6017fdd6a30f23f4492d7
-    :git: https://github.com/xmartlabs/Opera.git
   WebLinking:
     :commit: fddbacc30deab8afe12ce1d3b78bd27c593a0c29
     :git: https://github.com/kylef/WebLinking.swift
@@ -104,7 +98,7 @@ SPEC CHECKSUMS:
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
-  Opera: 5018ced09d6caadc4c1076ea806c940b558761a2
+  OperaSwift: c545476deab7a43dab1ca6a273bdb6f79382688f
   PayPal-iOS-SDK: 849321f6214a7187ee4cc684f63fe509df4c4a36
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   R.swift: 207a372a2b5977caef440c696a368009460641d1
@@ -112,14 +106,14 @@ SPEC CHECKSUMS:
   Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
   RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   Result: 4edd39003fdccf281d418ee1b006571f70123250
-  RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
-  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
-  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
+  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
+  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
   WebLinking: 3f71787c14a225148e8be29fe6e7c98597cbc459
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
   XLSwiftKit: aaf29528b340180a5d7b9c7e226c0e8fe188f3f5
 
-PODFILE CHECKSUM: 9c311a4fb5730721e69758bdfd85a472e4477495
+PODFILE CHECKSUM: 392a08e00255f891ebd30d5dd53b0ac7ad3100ee
 
 COCOAPODS: 1.2.0

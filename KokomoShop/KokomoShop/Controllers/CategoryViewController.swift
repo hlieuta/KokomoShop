@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-import Opera
+import OperaSwift
 import XLPagerTabStrip
 
 
@@ -37,8 +37,8 @@ class CategoryViewController: UITableViewController {
     fileprivate func loadCategory(categoryId: String){
         
         LoadingIndicator.show()
-        Route.Category.getCategory(categoryId: categoryId).rx_object().subscribe(
-            onNext: { [weak self] (catalogGroup: CatalogGroup) in
+        Route.Category.getCategory(categoryId: categoryId).rx.object().subscribe(
+            onSuccess: { [weak self] (catalogGroup: CatalogGroup) in
                 LoadingIndicator.hide()
                 self?.categories.append(Array(catalogGroup.CatalogGroupView))
             },
@@ -96,22 +96,19 @@ class CategoryViewController: UITableViewController {
             productPages.removeAll();
             if let id = selectedCategory.categoryId,let name = selectedCategory.categoryName{
                 LoadingIndicator.show()
-                Route.Category.getCategory(categoryId: id).rx_object().subscribe(
-                    onNext: { [weak self] (catalogGroup: CatalogGroup) in
+                Route.Category.getCategory(categoryId: id).rx.object().subscribe(
+                    onSuccess: { [weak self] (catalogGroup: CatalogGroup) in
+                        LoadingIndicator.hide()
                         for category in catalogGroup.CatalogGroupView {
                             if let categoryName = category.name, let categoryId = category.uniqueID{
                                 self?.productPages.append(ProductViewController(categoryId: categoryId, title: categoryName))
                             }
                         }
+                        self?.performSegue(withIdentifier:
+                            Storyboard.productListingSegueIdentifier, sender: self)
                     },
                     onError: { [weak self] (Error) in
                         self?.productPages.append(ProductViewController(categoryId: id, title: name))
-                        LoadingIndicator.hide()
-                        self?.performSegue(withIdentifier:
-                            Storyboard.productListingSegueIdentifier, sender: self)
-                        
-                },
-                    onCompleted:{ [weak self] () in
                         LoadingIndicator.hide()
                         self?.performSegue(withIdentifier:
                             Storyboard.productListingSegueIdentifier, sender: self)

@@ -9,7 +9,7 @@
 import Foundation
 import Foundation
 import Alamofire
-import Opera
+import OperaSwift
 
 extension Route {
     

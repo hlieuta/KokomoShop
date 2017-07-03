@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import RxSwift
-import Opera
+import OperaSwift
 
 class ShopButtonBarPagerTabStripViewController: ButtonBarPagerTabStripViewController {
 

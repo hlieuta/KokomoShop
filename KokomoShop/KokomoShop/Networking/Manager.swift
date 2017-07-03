@@ -7,30 +7,32 @@
 //
 
 import Foundation
-import Opera
+import OperaSwift
 import Alamofire
 import KeychainAccess
 import RxSwift
 
 class NetworkManager: RxManager {
-
+    
+    // Add a Github personal access token to have more requests per hour
     static let singleton = NetworkManager(manager: SessionManager.default)
-
+    
     override init(manager: Alamofire.SessionManager) {
         super.init(manager: manager)
         observers = [Logger()]
     }
+    
+    func refreshToken() -> Observable<String?> {
+        return Observable.just(nil)
+    }
+    
+}
 
-    override func rx_response(_ requestConvertible: URLRequestConvertible) -> Observable<OperaResult> {
-        let response = super.rx_response(requestConvertible)
-        return SessionController.sharedInstance.refreshToken().flatMap { _ in response }
+struct Logger: OperaSwift.ObserverType {
+    func willSendRequest(_ alamoRequest: Alamofire.Request, requestConvertible: URLRequestConvertible) {
+        debugPrint(alamoRequest)
     }
 }
 
 final class Route {}
 
-struct Logger: Opera.ObserverType {
-    func willSendRequest(_ alamoRequest: Alamofire.Request, requestConvertible: URLRequestConvertible) {
-        debugPrint(alamoRequest)
-    }
-}

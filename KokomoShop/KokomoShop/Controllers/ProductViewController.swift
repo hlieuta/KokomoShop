@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import RxSwift
-import Opera
+import OperaSwift
 
 
 class ProductViewController: UIViewController, IndicatorInfoProvider {
@@ -35,7 +35,6 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Driver.combineLatest()
     }
     
     // MARK: - IndicatorInfoProvider
