@@ -47,6 +47,7 @@
 		465910B01D80A5000022374B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465910AE1D80A5000022374B /* String.swift */; };
 		4B945363A28A1C6640411283 /* Pods_KokomoShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE523F7CE6A0E56FCF7A0A5 /* Pods_KokomoShop.framework */; };
 		6AAAC7ADB56883E748045F14 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174F585F7E9D6B2B6BF61B19 /* Pods_Tests.framework */; };
+		6C0AD8FE1F0CFD470062DE6D /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C0AD8FC1F0CFD470062DE6D /* Shop.storyboard */; };
 		6C1138611F01C7B900FA93FD /* ProductListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1138601F01C7B900FA93FD /* ProductListingViewController.swift */; };
 		6C34A8811EB83B6A00BA40DF /* CategoryRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34A8801EB83B6A00BA40DF /* CategoryRoute.swift */; };
 		6C34A8871EB8427B00BA40DF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34A8861EB8427B00BA40DF /* CategoryViewController.swift */; };
@@ -143,6 +144,7 @@
 		683AAEDEA98454FC0952E65C /* Pods-unit_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6AF246A8383CE6E2620C22C3 /* Pods-KokomoShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KokomoShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-KokomoShop/Pods-KokomoShop.release.xcconfig"; sourceTree = "<group>"; };
 		6AF4BCE310ECE9EF72052552 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6C0AD8FD1F0CFD470062DE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Shop.storyboard; sourceTree = "<group>"; };
 		6C1138601F01C7B900FA93FD /* ProductListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListingViewController.swift; sourceTree = "<group>"; };
 		6C34A8801EB83B6A00BA40DF /* CategoryRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRoute.swift; sourceTree = "<group>"; };
 		6C34A8861EB8427B00BA40DF /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				2867E82E1C74C7D400FCEBBD /* Main.storyboard */,
 				2867E8331C74C7D400FCEBBD /* LaunchScreen.storyboard */,
+				6C0AD8FC1F0CFD470062DE6D /* Shop.storyboard */,
 			);
 			name = Stoyboards;
 			path = Base.lproj;
@@ -600,6 +603,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C0AD8FE1F0CFD470062DE6D /* Shop.storyboard in Resources */,
 				2867E8351C74C7D400FCEBBD /* LaunchScreen.storyboard in Resources */,
 				2867E8321C74C7D400FCEBBD /* Assets.xcassets in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
@@ -1041,6 +1045,14 @@
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		6C0AD8FC1F0CFD470062DE6D /* Shop.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C0AD8FD1F0CFD470062DE6D /* Base */,
+			);
+			name = Shop.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

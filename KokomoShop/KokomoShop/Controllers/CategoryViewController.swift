@@ -76,6 +76,7 @@ class CategoryViewController: UITableViewController {
         static let categoryCellIdentifier = "Category"
         static let subcategorySegueIdentifier = "subcategory"
         static let productListingSegueIdentifier = "productListing"
+        static let productViewControlerIdentifier = "ProductViewController"
     }
 
 
@@ -101,7 +102,11 @@ class CategoryViewController: UITableViewController {
                         LoadingIndicator.hide()
                         for category in catalogGroup.CatalogGroupView {
                             if let categoryName = category.name, let categoryId = category.uniqueID{
-                                self?.productPages.append(ProductViewController(categoryId: categoryId, title: categoryName))
+                                let storyboard = UIStoryboard(name: "Shop", bundle: nil)
+                                let controller = storyboard.instantiateViewController(withIdentifier: Storyboard.productViewControlerIdentifier) as! ProductViewController
+                                controller.itemInfo = IndicatorInfo(title: categoryName)
+                                controller.categoryId = categoryId
+                                self?.productPages.append(controller)
                             }
                         }
                         self?.performSegue(withIdentifier:
