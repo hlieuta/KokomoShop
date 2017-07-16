@@ -249,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61I-W8-dgP">
-                                <rect key="frame" x="0.0" y="43" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T6G-bn-w2m" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -273,7 +273,7 @@
                             <constraint firstItem="T6G-bn-w2m" firstAttribute="leading" secondItem="kYO-Yx-4cA" secondAttribute="leading" id="IwU-fa-kvk"/>
                             <constraint firstAttribute="trailing" secondItem="61I-W8-dgP" secondAttribute="trailing" id="e5H-4T-JmY"/>
                             <constraint firstAttribute="trailing" secondItem="T6G-bn-w2m" secondAttribute="trailing" id="f7s-oS-fEV"/>
-                            <constraint firstItem="61I-W8-dgP" firstAttribute="top" secondItem="ZOO-rO-quw" secondAttribute="bottom" constant="43" id="lxh-6Q-dv4"/>
+                            <constraint firstItem="61I-W8-dgP" firstAttribute="top" secondItem="ZOO-rO-quw" secondAttribute="bottom" id="lxh-6Q-dv4"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

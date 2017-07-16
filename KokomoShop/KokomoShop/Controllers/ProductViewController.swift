@@ -8,16 +8,15 @@
 
 import UIKit
 import XLPagerTabStrip
+import OperaSwift
 import RxSwift
 import RxCocoa
-import OperaSwift
 
 
 class ProductViewController: UIViewController, IndicatorInfoProvider {
     
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     var itemInfo: IndicatorInfo = "View"
     var categoryId: String = ""
@@ -43,27 +42,8 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-        rx.sentMessage(#selector(ProductViewController.viewWillAppear(_:)))
-            .map { _ in false }
-            .bind(to: viewModel.refreshTrigger)
-            .addDisposableTo(disposeBag)
-        
-        tableView.rx.reachedBottom
-            .bind(to: viewModel.loadNextPageTrigger)
-            .addDisposableTo(disposeBag)
-        
-        viewModel.loading
-            .drive(activityIndicatorView.rx.isAnimating)
-            .addDisposableTo(disposeBag)
-        
-        Driver.combineLatest(viewModel.elements.asDriver(), viewModel.firstPageLoading) { elements, loading in return loading ? [] : elements }
-            .asDriver()
-            .drive(tableView.rx.items(cellIdentifier: "Cell")) { _, product, cell in
-                cell.textLabel?.text = product.name
-            }
-            .addDisposableTo(disposeBag)
-
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
     }
     // MARK: - IndicatorInfoProvider
@@ -73,15 +53,25 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
     }
    
 }
-extension PaginationRequest: PaginationRequestTypeSettings{
-    public var queryParameterName: String{
-        return "pageSize"
-    }
-    public var pageParameterName: String {
-        return "pageNumber"
-    }
-    public var firstPageParameterValue: String {
-        return "1"
+
+extension ProductViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
+    //2
+    func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    //3
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
+                                                      for: indexPath)
+        // Configure the cell
+        return cell
+    }
 }
+
