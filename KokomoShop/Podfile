@@ -28,6 +28,7 @@ def app_pods
     pod 'XLSwiftKit', '~> 2.0'
     pod 'XLPagerTabStrip', '~> 7.0'
     pod 'PayPal-iOS-SDK'
+    pod 'Nuke', '~> 5.0'
 end
 
 def testing_pods

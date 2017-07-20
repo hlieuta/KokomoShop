@@ -54,6 +54,7 @@
 		6C34A8891EB84DDA00BA40DF /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34A8881EB84DDA00BA40DF /* CategoryModel.swift */; };
 		6C34A88B1EB8512D00BA40DF /* CatalogGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34A88A1EB8512D00BA40DF /* CatalogGroupModel.swift */; };
 		6C562CAC1F05B8B60070E940 /* ProductModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C562CAB1F05B8B60070E940 /* ProductModal.swift */; };
+		6CA1B3BE1F201D4E00F60158 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1B3BD1F201D4E00F60158 /* ProductCollectionViewCell.swift */; };
 		6CACCFEA1ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CACCFE91ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift */; };
 		6CACCFEC1ECD311A00655CAA /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CACCFEB1ECD311A00655CAA /* ProductViewController.swift */; };
 		6CBF4B011F070895001E1E73 /* CatalogEntryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBF4B001F070895001E1E73 /* CatalogEntryModal.swift */; };
@@ -151,6 +152,7 @@
 		6C34A8881EB84DDA00BA40DF /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		6C34A88A1EB8512D00BA40DF /* CatalogGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogGroupModel.swift; sourceTree = "<group>"; };
 		6C562CAB1F05B8B60070E940 /* ProductModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModal.swift; sourceTree = "<group>"; };
+		6CA1B3BD1F201D4E00F60158 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		6CACCFE91ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopButtonBarPagerTabStripViewController.swift; sourceTree = "<group>"; };
 		6CACCFEB1ECD311A00655CAA /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		6CBF4B001F070895001E1E73 /* CatalogEntryModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogEntryModal.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				6CACCFE91ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift */,
 				6CACCFEB1ECD311A00655CAA /* ProductViewController.swift */,
 				6C1138601F01C7B900FA93FD /* ProductListingViewController.swift */,
+				6CA1B3BD1F201D4E00F60158 /* ProductCollectionViewCell.swift */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 			files = (
 				28FEB24C1C9875F60027D470 /* UIApplication.swift in Sources */,
 				6CC2DC5A1EC1D29E00B2B85D /* MainViewController.swift in Sources */,
+				6CA1B3BE1F201D4E00F60158 /* ProductCollectionViewCell.swift in Sources */,
 				B23A40F01C972C2B004AB8DC /* NSDate.swift in Sources */,
 				6CACCFEA1ECD213F00655CAA /* ShopButtonBarPagerTabStripViewController.swift in Sources */,
 				2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */,
