@@ -34,6 +34,12 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
         super.init(coder: aDecoder)
     }
     
+    
+    fileprivate struct Storyboard{
+        static let productCellIdentifier = "cell"
+        static let productDetailsSegueIdentifier = "productDetails"
+
+    }
 
     
     lazy var viewModel: PaginationViewModel<PaginationRequest<Product>> = { [unowned self] in
@@ -65,13 +71,13 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
         
         Driver.combineLatest(viewModel.elements.asDriver(), viewModel.firstPageLoading) { elements, loading in return loading ? [] : elements }
             .asDriver()
-            .drive(collectionView.rx.items(cellIdentifier: "cell")) { _, product, cell in
+            .drive(collectionView.rx.items(cellIdentifier: Storyboard.productCellIdentifier)) { _, product, cell in
                 let productCell = cell as! ProductCollectionViewCell
                 productCell.productName.text = product.name
                 productCell.productDescription.text = product.shortDescription
-                productCell.price.text = "$100"
+                productCell.price.text = "$\(product.Price[0].priceValue ?? "0.0")"
                 productCell.imageView.image = nil
-                Nuke.loadImage(with: URL(string: Constants.Network.baseUrl.absoluteString + product.fullImage!)!, into: productCell.imageView)
+                //Nuke.loadImage(with: URL(string: Constants.Network.baseUrl.absoluteString + product.fullImage!)!, into: productCell.imageView)
                 
             }
             .addDisposableTo(disposeBag)
@@ -90,34 +96,26 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
         viewModel.emptyState
             .drive(onNext: { [weak self] emptyState in self?.emptyStateLabel.isHidden = !emptyState })
             .addDisposableTo(disposeBag)
-        
+    
+        collectionView.rx.modelSelected(Product.self).subscribe(onNext:  { [weak self] value in
+            self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
+            
+        }).disposed(by: disposeBag)
     }
     // MARK: - IndicatorInfoProvider
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productDetailsController = segue.destination as? ProductDetailsViewController {
+            if let product = sender as? Product{
+                productDetailsController.product = product
+            }
+        }
+    }
+    
+    
    
 }
-
-extension ProductViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    //2
-    func collectionView(_ collectionView: UICollectionView,
-                                 numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    //3
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
-                                                      for: indexPath)
-        // Configure the cell
-        return cell
-    }
-}
-

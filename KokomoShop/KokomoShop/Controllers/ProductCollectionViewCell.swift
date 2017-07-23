@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ProductCollectionViewCell: UICollectionViewCell {
     
@@ -14,4 +15,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var price: UILabel!
+    
+    private (set) var rx_reusableDisposeBag = DisposeBag()
+    override func prepareForReuse() {
+        rx_reusableDisposeBag = DisposeBag()
+        super.prepareForReuse()
+    }
 }
