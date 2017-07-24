@@ -14,9 +14,19 @@ class ProductDetailsViewController: BarPagerTabStripViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        barView.selectedBar.backgroundColor = .orange
+        barView.backgroundColor = UIColor(red: 7/255, green: 185/255, blue: 155/255, alpha: 1)
+               
         // Do any additional setup after loading the view.
     }
+    
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        
+        let child1 = ImagePagerViewController(itemInfo: "View 1")
+        let child2 = ImagePagerViewController(itemInfo: "View 2")
+        return [child1,child2]
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -22,6 +22,7 @@ final class Product: Object {
     dynamic var buyable: String?
     dynamic var longDescription: String?
     dynamic var shortDescription: String?
+    dynamic var imageUrls: String?
     let  Price = List<Price>()
 
 
@@ -41,6 +42,7 @@ final class Product: Object {
                      buyable: String?,
                      longDescription: String?,
                      shortDescription: String?,
+                     imageUrls: String?,
                      Price: [Price]?) {
         self.init()
         self.storeID = storeID
@@ -52,9 +54,11 @@ final class Product: Object {
         self.buyable = buyable
         self.longDescription = longDescription
         self.shortDescription = shortDescription
+        self.imageUrls = imageUrls
         if let price = Price {
             self.Price.append(objectsIn:price)
         }
+        
         
         
     }
@@ -72,6 +76,7 @@ extension Product: Decodable, OperaDecodable {
                            buyable: data =>? "buyable",
                            longDescription: data =>? "longDescription",
                            shortDescription: data =>? "shortDescription",
+                           imageUrls: data =>? "imageUrls",
                            Price: data =>? "Price")
     }
     

@@ -19,6 +19,9 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let refreshControl = UIRefreshControl()
+    let placeholderImage = UIImage(named: "ProductImagePlaceholder")
+    fileprivate static let fullImage = "fs_1.jpg"
+    fileprivate static let zoomImage = "zm_1.jpg"
     var disposeBag = DisposeBag()
 
     var itemInfo: IndicatorInfo = "View"
@@ -71,13 +74,13 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
         
         Driver.combineLatest(viewModel.elements.asDriver(), viewModel.firstPageLoading) { elements, loading in return loading ? [] : elements }
             .asDriver()
-            .drive(collectionView.rx.items(cellIdentifier: Storyboard.productCellIdentifier)) { _, product, cell in
+            .drive(collectionView.rx.items(cellIdentifier: Storyboard.productCellIdentifier)) {[weak self] _, product, cell in
                 let productCell = cell as! ProductCollectionViewCell
                 productCell.productName.text = product.name
                 productCell.productDescription.text = product.shortDescription
                 productCell.price.text = "$\(product.Price[0].priceValue ?? "0.0")"
-                productCell.imageView.image = nil
-                //Nuke.loadImage(with: URL(string: Constants.Network.baseUrl.absoluteString + product.fullImage!)!, into: productCell.imageView)
+                productCell.imageView.image = self?.placeholderImage
+               // Nuke.loadImage(with: URL(string: Constants.Network.baseUrl.absoluteString + product.fullImage!)!, into: productCell.imageView)
                 
             }
             .addDisposableTo(disposeBag)
@@ -98,7 +101,19 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
             .addDisposableTo(disposeBag)
     
         collectionView.rx.modelSelected(Product.self).subscribe(onNext:  { [weak self] value in
-            self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
+            
+            let url = "\(Constants.Network.baseUrl)\(value.fullImage?.replacingOccurrences(of: ProductViewController.fullImage, with: ProductViewController.zoomImage) ??  (String()))"
+            if let string  = value.imageUrls , !string.isEmpty {
+                LoadingIndicator.show()
+                getImages(url: url, completionHandler: { (urls) in
+                    value.imageUrls = urls.joined(separator: "|")
+                    LoadingIndicator.hide()
+                    self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
+                })
+            }else {
+                self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
+            }
+            
             
         }).disposed(by: disposeBag)
     }
