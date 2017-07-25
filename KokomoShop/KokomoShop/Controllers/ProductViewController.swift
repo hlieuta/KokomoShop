@@ -102,16 +102,17 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
     
         collectionView.rx.modelSelected(Product.self).subscribe(onNext:  { [weak self] value in
             
-            let url = "\(Constants.Network.baseUrl)\(value.fullImage?.replacingOccurrences(of: ProductViewController.fullImage, with: ProductViewController.zoomImage) ??  (String()))"
-            if let string  = value.imageUrls , !string.isEmpty {
+            let url = "\(Constants.Network.baseUrl)\(value.fullImage?.replacingOccurrences(of: ProductViewController.fullImage, with: ProductViewController.zoomImage) ??  "")"
+            if (value.imageUrls != nil)  {
+                self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
+                
+            }else {
                 LoadingIndicator.show()
                 getImages(url: url, completionHandler: { (urls) in
                     value.imageUrls = urls.joined(separator: "|")
                     LoadingIndicator.hide()
                     self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
                 })
-            }else {
-                self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
             }
             
             

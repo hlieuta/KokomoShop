@@ -11,6 +11,13 @@ import XLPagerTabStrip
 
 
 class ProductDetailsViewController: BarPagerTabStripViewController {
+    
+    fileprivate struct Storyboard{
+        static let imagePagerViewControllerIdentifier = "imagePagerViewController"
+    }
+    
+    fileprivate var imagePagerViews = [ImagePagerViewController]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +28,7 @@ class ProductDetailsViewController: BarPagerTabStripViewController {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        
-        let child1 = ImagePagerViewController(itemInfo: "View 1")
-        let child2 = ImagePagerViewController(itemInfo: "View 2")
-        return [child1,child2]
+        return imagePagerViews
     }
 
 
@@ -33,10 +37,25 @@ class ProductDetailsViewController: BarPagerTabStripViewController {
         // Dispose of any resources that can be recreated.
     }
     
+   
     var product = Product (){
         didSet{
-            print(product)
+            if let coms = product.imageUrls?.components(separatedBy: "|") {
+                for url in coms {
+                    imagePagerViews.append(getImageViewController(url: url))
+                }
+            }else {
+                imagePagerViews.append(getImageViewController(url: ""))
+            }
+            
         }
+    }
+    
+    func getImageViewController(url:String) -> ImagePagerViewController {
+        let controller = storyboard?.instantiateViewController(withIdentifier: Storyboard.imagePagerViewControllerIdentifier) as! ImagePagerViewController
+        controller.imageUrl = url
+        return controller
+        
     }
     
 

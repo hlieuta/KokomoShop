@@ -143,6 +143,9 @@
                             <constraint firstAttribute="trailing" secondItem="7sM-bz-nBy" secondAttribute="trailing" id="hxH-jo-lvy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="7sM-bz-nBy" id="WKi-1g-Z6p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Aq-Hl-BKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsn-il-Caj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="524" y="-463.71814092953525"/>
+            <point key="canvasLocation" x="523.125" y="-463.73239436619718"/>
         </scene>
     </scenes>
     <resources>
