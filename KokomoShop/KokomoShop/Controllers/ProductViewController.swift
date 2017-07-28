@@ -108,11 +108,16 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
                 
             }else {
                 LoadingIndicator.show()
-                getImages(url: url, completionHandler: { (urls) in
-                    value.imageUrls = urls.joined(separator: "|")
+                var urls = [String]()
+                getImages(url: url).observeOn(MainScheduler.instance).subscribe(onNext: { (validUrl) in
+                    urls.append(validUrl)
+                },
+                onCompleted: {
                     LoadingIndicator.hide()
+                    value.imageUrls = urls.joined(separator: "|")
                     self?.performSegue(withIdentifier: Storyboard.productDetailsSegueIdentifier, sender: value)
-                })
+
+                }).addDisposableTo((self?.disposeBag)!)
             }
             
             
