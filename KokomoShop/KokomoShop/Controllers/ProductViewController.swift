@@ -80,7 +80,7 @@ class ProductViewController: UIViewController, IndicatorInfoProvider {
                 productCell.productDescription.text = product.shortDescription
                 productCell.price.text = "$\(product.Price[0].priceValue ?? "0.0")"
                 productCell.imageView.image = self?.placeholderImage
-               // Nuke.loadImage(with: URL(string: Constants.Network.baseUrl.absoluteString + product.fullImage!)!, into: productCell.imageView)
+                Nuke.loadImage(with: URL(string: Constants.Network.baseUrl.absoluteString + product.fullImage!)!, into: productCell.imageView)
                 
             }
             .addDisposableTo(disposeBag)

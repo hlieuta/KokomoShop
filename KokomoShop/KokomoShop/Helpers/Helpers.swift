@@ -38,13 +38,12 @@ func getImages(url: String)-> Observable<String>  {
             remoteFileExists(url: imageUrl!, done: { (available) in
                 if available {
                     observer.onNext(checkingUrl)
-                }
-                else{
+                }else{
                     observer.onCompleted()
                 }
+                
             })
         }
-        observer.onCompleted()
         return Disposables.create()
     }
 }
@@ -55,7 +54,11 @@ func remoteFileExists(url: URL, done: @escaping (Bool) -> Void) {
     let session = URLSession.shared
     session.dataTask(with: request) {data, response, err in
         if let httpResponse = response as? HTTPURLResponse {
-            done(httpResponse.statusCode == 200)
+           done(httpResponse.statusCode == 200)
         }
+        if err != nil {
+            done(false)
+        }
+        
     }.resume()
 }
